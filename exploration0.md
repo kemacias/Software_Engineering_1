@@ -1,6 +1,6 @@
-Kate Macias
-Software Engineering 1
-Fall 2026
+###Kate Macias
+###Software Engineering 1
+###Fall 2026
 
 # Exploration 1
 
