@@ -4,10 +4,10 @@
 
 ## Challenge 1.1
 
-## Q: What kind of agencies do we need to work with? (Forest service, Fema, EMS ect)
+## Q1: What kind of agencies do we need to work with? (Forest service, Fema, EMS ect)
 
-## A: I think I want it just general so that anyone, FEMA or not, can post hazards on the site.
+## A1: I think I want it just general so that anyone, FEMA or not, can post hazards on the site.
 
-## Q: So anyone can post hazards, who are we notifying of these hazards?
+## Q2: is the goal to notify other recreators of hazards only? or are we wanting to notify the people who would take care of the hazards as well?
 
-## A:
+## A2: Yeah, any user. We won't notify any agencies, but users can look at the map to see things near them. Maybe we can set up an opt-in notification to get alerts when someone puts a hazard on the map near the user?
