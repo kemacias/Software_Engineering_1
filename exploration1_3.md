@@ -4,8 +4,8 @@
 
 ## Why does having good variable names help human code readers?
 
-### They describe exactly what they are in a way that they can't be confused with other similar variables. It makes the code make sense and your purpose obvious for the next person working on your code. 
+### They describe exactly what they are in a way that they can't be confused with other similar variables. It makes the code make sense and your purpose obvious for the next person working on your code. the less you have to decipher variables, the easier it is for humans to understand.
 
 ## Speculate on why having good variable names helps AI maintain and understand code.
 
-### AI gets way into the weeds with code really fast. Good variable names help keep it on the right track, and help it write code that you can verify is correct, you can work on, and someone else can work on down the road.
+### AI gets way into the weeds with code really fast. Good variable names help keep it on the right track, and help it write code that you can verify is correct, you can work on, and someone else can work on down the road. AI is just human knowledge with super theroretical math skills. It's not really smart, it's just has unfathomable pattern recognition skills.
