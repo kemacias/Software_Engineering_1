@@ -1,25 +1,46 @@
-# Kate Macias
-# Software Engineering
-# Fall 2026
-#
+5
+def sum():
+    array = [4, 2, 16, 5, 19, 5, 6, 2, 3, 5, 15, 4, 6, 10, 13, 1, 18, 6, 9, 10, 9,
+    12, 6, 9, 11, 18, 16, 18, 4, 9, 15, 7, 20, 12, 1, 4, 20, 17, 6, 12, 20,
+    19, 13, 10, 10, 7, 8, 2, 18, 20, 1, 7, 17, 3, 8, 10, 7, 1, 15, 7, 3, 13,
+    14, 12, 19, 13, 7, 17, 2, 14, 3, 17, 5, 12, 16, 6, 10, 15, 8, 2, 7, 1,
+    18, 16, 17, 12, 7, 14, 10, 17, 12, 19, 2, 20, 16, 7, 20, 16, 5, 7]
 
-# one
-#
-qone = input("enter the first number")
-qtwo = input("enter the second number")
+    print(fiftyfive(array))
+    print(plants(array))
+    print(friends(array))
+    print(enlighten(array))
 
-answer = qone + qtwo
 
-print(answer)
+def fiftyfive(alphabet):
+    z = 0
+    for i in alphabet:
+        z+=alphabet[i]
+    return z
 
-answer = input("enter a number")
+#number two
+def plants(sixteen):
+    return fiftyfive(sixteen)/len(sixteen)
 
-no_this_is_the_answer = input("enter another number")
+def friends(hexidecimals):
+    jason=0
+    for people in hexidecimals:
+        if hexidecimals[people]%2!=0:
+            jason +=1
+    return jason
+def enlighten(people):
+    Scream=0
+    same=False
+    for thirds in people:
+        if people[thirds]%2!=0:
+            if same==True:
+                Scream+=1
+            else:
+                same=True
+        else:
+            same=False
+    return Scream
 
-this_one_for_real = input("enter yet another number")
 
-whatever_this_equals = answer + no_this_is_the_answer + this_one_for_real
-
-print(whatever_this_equals)
-
-im_just_looking_at_nothing = input("enter a number")
+if __name__ == "__main__":
+    main()
