@@ -44,7 +44,7 @@ def clusters(pairs):
             groups.append(sweep(links, n, seen))
     return groups
 
-
+# finds the biggest clusters
 def biggest(pairs):
     groups = clusters(pairs)
     return max(groups, key=len)
