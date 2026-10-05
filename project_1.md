@@ -16,7 +16,7 @@
 
 ### A3: Yeah, if they're four hours late, we allow other people to take them.
 
-## Q4: 
+## Q4: Do you want refunds to be issued by the app automatically then or do they need to be approved by a human?
 
 ### A4:
 
