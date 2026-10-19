@@ -13,3 +13,8 @@ flowchart LR
 
 ## Part 2
 ```mermaid
+flowchart LR
+    A[User Applications] -->|API Calls| E[API]<-->|GIS info|F[(GIS Database)] 
+    
+    E<--> G[Web Front End]
+```
