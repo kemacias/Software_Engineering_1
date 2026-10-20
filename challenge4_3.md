@@ -3,8 +3,6 @@
 
 ```mermaid
 classDiagram
-    lockable <|-- Lion
-   Describable <|-- Goat
     Effects <|-- poison
     Effects <|-- Regen
     Item <|-- Key
