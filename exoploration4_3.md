@@ -5,7 +5,7 @@
 
 ## A vendor releases v2 of their API and renames several fields. Explain how wrapping the API affects the cost of adapting to this change.
 
--a wrapper makes it easy to change an API without having to change anything else
+- a wrapper makes it easy to change an API without having to change anything else
 
 ## Why does wrapping an external API make unit testing easier? Name at least two specific problems it helps you avoid.
 
