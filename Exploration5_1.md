@@ -15,10 +15,10 @@ What does public and private mean in OOP parlance?
 - public, any code outside the class can use the member (kinda like a gobal variable)
 - private, only the code inside the class can use the member. 
 
-Come up with two classes that share a has-a relationship.
+## Come up with two classes that share a has-a relationship.
 
--
+- A library has many books 
 
-Come up with two classes that share an is-a relationship.
+## Come up with two classes that share an is-a relationship.
 
--
+- A Savings account is a Debit account so it inherits everything from Debit account and adds some things like interest rate
