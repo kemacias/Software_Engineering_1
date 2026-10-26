@@ -65,3 +65,14 @@ flowchart LR
     E -->G[(local normalized database)]
     G -->|Drive Cleanup| B
 ```
+
+| Component | Description |
+|-----------|-------------|
+| KOBO | E-reader running a NickelMenu custom one tap sync |
+| Google Drive | Holds timestamped database snapshots until Ko-Tistics fetches them. 
+| Ko-Tistics | Python application on the laptop that coordinates fetching, merging, normalizing, and cleanup. |
+| merge files | Combines each snapshot's `.sqlite` and `-wal` files into one standalone database so no recent progress is lost. |
+| normalize data | Filters to sideloaded books and converts Kobo's raw columns into usable, normalized data structure. |
+| local normalized database | SQLite database storing the normalized data for the dashboard. |
+| Streamlit Dashboard | Local web dashboard that displays reading statistics and progress over time. |
+| Drive Cleanup | Deletes ingested snapshots from Google Drive after the local database update succeeds. |
