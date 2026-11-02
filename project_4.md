@@ -76,3 +76,123 @@ flowchart LR
 | local normalized database | SQLite database storing the normalized data for the dashboard. |
 | Streamlit Dashboard | Local web dashboard that displays reading statistics and progress over time. |
 | Drive Cleanup | Deletes ingested snapshots from Google Drive after the local database update succeeds. |
+
+
+# Data Model
+## ER Diagram
+
+```mermaid
+erDiagram
+    %% Normalized reading-data schema derived from KoboReader.sqlite
+    %% Quoted comments show the source column in the original Kobo database.
+
+    book {
+        text book_id PK "content.ContentID"
+        text title "content.Title"
+        text subtitle "content.Subtitle"
+        text isbn "content.ISBN"
+        text publisher "content.Publisher"
+        text language "content.Language"
+        text series_id FK "content.SeriesID"
+        real series_number "content.SeriesNumberFloat"
+        int word_count "content.WordCount (-1 = unknown)"
+        int pages "content.___NumPages"
+        text source "derived from ContentID: sideloaded or google_drive"
+        datetime date_added "content.DateAdded"
+    }
+
+    author {
+        int author_id PK "generated"
+        text name "split from content.Attribution"
+    }
+
+    book_author {
+        text book_id PK, FK
+        int author_id PK, FK
+        int position "order listed in Attribution"
+    }
+
+    series {
+        text series_id PK "content.SeriesID"
+        text name "content.Series"
+    }
+
+    snapshot {
+        int snapshot_id PK "generated"
+        datetime taken_at "from file name timestamp"
+        text file_name "KoboReader-YYYYMMDD-HHMMSS.sqlite"
+    }
+
+    reading_status {
+        int status_id PK "content.ReadStatus code"
+        text label "unread, reading, finished"
+    }
+
+    reading_state {
+        int snapshot_id PK, FK
+        text book_id PK, FK
+        int status_id FK "content.ReadStatus"
+        int percent_read "content.___PercentRead"
+        real minutes_read "content.TimeSpentReading"
+        int sessions "content.TimesStartedReading"
+        datetime last_read "content.DateLastRead"
+        datetime started_at "content.LastTimeStartedReading"
+        datetime finished_at "content.LastTimeFinishedReading"
+    }
+
+    highlight {
+        text highlight_id PK "Bookmark.BookmarkID"
+        text book_id FK "Bookmark.VolumeID"
+        text type "Bookmark.Type"
+        text quote "Bookmark.Text"
+        text note "Bookmark.Annotation"
+        real chapter_progress "Bookmark.ChapterProgress"
+        int color "Bookmark.Color"
+        datetime created_at "Bookmark.DateCreated"
+        datetime modified_at "Bookmark.DateModified"
+    }
+
+    shelf {
+        text shelf_id PK "Shelf.Id"
+        text name "Shelf.Name"
+        datetime created_at "Shelf.CreationDate"
+    }
+
+    shelf_book {
+        text shelf_id PK, FK "via ShelfContent.ShelfName"
+        text book_id PK, FK "ShelfContent.ContentId"
+        datetime added_at "ShelfContent.DateModified"
+    }
+
+    rating {
+        text book_id PK, FK "ratings.ContentID"
+        int stars "ratings.Rating"
+        text review "ratings.Review"
+        datetime rated_at "ratings.DateModified"
+    }
+
+    word_lookup {
+        text word PK "WordList.Text"
+        text book_id FK "WordList.VolumeId"
+        text dictionary "WordList.DictSuffix"
+        datetime looked_up_at "WordList.DateCreated"
+    }
+
+    book ||--o{ book_author : "written by"
+    author ||--o{ book_author : "writes"
+    series |o--o{ book : "contains"
+    snapshot ||--o{ reading_state : "captures"
+    book ||--o{ reading_state : "tracked in"
+    reading_status ||--o{ reading_state : "describes"
+    book ||--o{ highlight : "has"
+    shelf ||--o{ shelf_book : "holds"
+    book ||--o{ shelf_book : "placed on"
+    book ||--o| rating : "rated"
+    book ||--o{ word_lookup : "looked up in"
+```
+
+
+
+# Interfaces
+# Invariants
+# Failure Modes
