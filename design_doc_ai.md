@@ -1,0 +1,1 @@
+# I made no changes that the AI suggested. I spent a bunch of time on this, before I read the AI instructions part of the assignment and I'm really happy with my own work. The AI took it way off into the weeds.
