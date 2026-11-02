@@ -7,8 +7,8 @@
     - User Interface 10%
     - LogIn/account 20%
     - Delivery UI 20% 
+    - 
   # Back End 50%
     - User Database 10%
     - Ordering System 20%
     - Delivery dispatch 20%
-    -
