@@ -191,65 +191,10 @@ erDiagram
     book ||--o{ word_lookup : "looked up in"
 ```
 
-#Class Diagram
 
-```mermaid
-classDiagram
-    direction LR
-
-    class SyncManager {
-        -drive: DriveClient
-        -db: ReadingDatabase
-        -staging_dir: Path
-        -log_path: Path
-        +run() bool
-        -process_snapshot(snapshot: Snapshot) bool
-        -cleanup(snapshot: Snapshot) void
-        -write_log(file_name: str, success: bool, message: str) void
-    }
-
-    class DriveClient {
-        -credentials_path: Path
-        -folder_id: str
-        -service: Resource
-        +authenticate() void
-        +list_snapshot_names() list~str~
-        +download_snapshot(file_name: str, dest: Path) Snapshot
-        +delete_snapshot(file_name: str) void
-    }
-
-    class Snapshot {
-        +file_name: str
-        +taken_at: datetime
-        +sqlite_path: Path
-        +wal_path: Path
-        +merged_path: Path
-        +from_file_name(file_name: str)$ datetime
-        +has_wal() bool
-        +merge_wal() Path
-        +verify_integrity() bool
-    }
-
-    class ReadingDatabase {
-        -db_path: Path
-        -conn: Connection
-        +connect() void
-        +has_snapshot(file_name: str) bool
-        +ingest(snapshot: Snapshot) int
-        -normalize_books(source: Connection) void
-        -split_authors(attribution: str) list~str~
-        -insert_reading_state(snapshot_id: int, source: Connection) void
-        -insert_highlights(source: Connection) void
-        +close() void
-    }
-
-    SyncManager "1" --> "1" DriveClient : fetches and cleans up with
-    SyncManager "1" --> "1" ReadingDatabase : writes to
-    SyncManager "1" o-- "0..*" Snapshot : processes
-    DriveClient ..> Snapshot : creates
-    ReadingDatabase ..> Snapshot : reads merged file
-```
 
 # Interfaces
+
+
 # Invariants
 # Failure Modes
