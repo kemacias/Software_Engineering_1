@@ -8,4 +8,4 @@
 
 [![Slice Lab prototype](docs/screenshot.png)](https://kemacias.github.io/<repo-name>/)
 
-**[▶ Open the live prototype](https://kemacias.github.io/<repo-name>/)**
+**[▶ Open the live prototype](https://kemacias.github.io/Software_Engineering_1/)**
