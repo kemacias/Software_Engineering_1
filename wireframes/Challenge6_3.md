@@ -37,23 +37,6 @@
 
 
 ## Draw a Gantt Chart in Mermaid showing the project timeline.
-```mermaid
-Answers to the "What To Do" questions:
-
-1. **Total estimate:** About 100 working days of effort for the whole project, so each WBS percentage is also its day count (for example, Customer Web App at 35% is 35 days).
-
-2. **Days per task:**
-   - **Project Management (10):** planning 5, status reporting 5
-   - **Requirements and Design (15):** requirements 5, UX 5, architecture 5
-   - **Customer Web App (35):** 7 days each for its 5 tasks
-   - **Back-End (20):** menu service 7, order service 7, auth 6
-   - **Staff Tools (7):** order queue 4, menu management 3
-   - **Testing (8):** automated 4, usability and security 4
-   - **Deploy (5):** hosting and CI/CD 3, launch 2
-
-3. **Parallel work:** Project management runs the whole time. UX and architecture can happen together once requirements are gathered. After design, the customer app, back-end and staff tools can all be built in parallel. Hosting setup can overlap with testing, but launch has to come last.
-
-4. **Gantt chart (Mermaid):**
 
 ```mermaid
 gantt
@@ -86,4 +69,4 @@ gantt
     section Deployment
     Hosting and CI/CD setup      :d1, after c5, 3d
     Launch and support           :d2, after t2, 2d
-```
+```mermaid
