@@ -69,4 +69,4 @@ gantt
     section Deployment
     Hosting and CI/CD setup      :d1, after c5, 3d
     Launch and support           :d2, after t2, 2d
-```mermaid
+```
