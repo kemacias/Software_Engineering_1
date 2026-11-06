@@ -34,7 +34,7 @@
 
 ## Determine which of the tasks can be done in parallel.
 
-
+Project management runs the entire project. Once requirements are gathered, UX design and architecture can happen at the same time, and after design the customer web app, back-end services, and staff tools can be built in parallel. Hosting/CI-CD setup can overlap with testing, but launch must come last.
 
 ## Draw a Gantt Chart in Mermaid showing the project timeline.
 
